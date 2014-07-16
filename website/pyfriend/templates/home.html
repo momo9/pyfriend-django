@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="北洋小伙伴,天津大学"/>
+<meta name="author" content="刘文图熙1895"/>
+
+<title>欢迎来到北洋小伙伴</title>
+
+<link href="../../static/css/style_home.css" type="text/css" rel="stylesheet"/>
+<link href="../../static/css/jquery-ui.css" type="text/css" rel="stylesheet"/>
+
+<script src="../../static/js/jquery-1.11.1.js" language="javascript"></script>
+<script src="../../static/js/jquery.validate.js" language="javascript"></script>
+<script src="../../static/js/jquery.metadata.js" language="javascript"></script>
+<script src="../../static/js/jquery-ui.js" language="javascript"></script>
+<script src="../../static/js/main_home.js" language="javascript"></script>
+
+
+</head>
+
+<body background="../../static/pic/bg.jpg" bgproperties="fixed" >
+
+<div id="personal">  
+<ul>
+
+{%if request.user.is_authenticated %}
+<li>
+    {{request.user}}已登陆  <a href="/logout/">注销</a>
+
+</li>
+
+{% else %}
+<li id="reg_log" >登录/注册&nbsp;</li>
+{% endif %}
+<li>加入收藏&nbsp;</li>
+</ul>
+
+</div>
+
+<div id="all">
+
+
+
+
+<div class="main">
+
+<div class="logo"><img src="../../static/pic/logo.png"/></div>
+
+
+
+ <div class="maintable">
+<table    class="table1" >
+  <tr>
+	<td   nowrap="nowrap" class="featuretd" id="feature1"><a href="hot.html" ><img src="../../static/pic/11.png" class="picmask" id="hotmask" /><img src="../../static/pic/hot.gif" class="pic" id="hot"/></a>
+  </td>
+   
+    <td   nowrap="nowrap" class="featuretd"><img src="../../static/pic/11.png" class="picmask" /><img src="../../static/pic/blog.gif" class="pic"/></td>
+    
+    <td   nowrap="nowrap"><img src="../../static/pic/love.gif"/></td>
+  </tr>
+
+</table>
+
+<table  align="center" class="table2" >
+
+<tr>
+	<td   nowrap="nowrap"><a href="" ><img src="../../static/pic/eating.gif" class="pic" /></a>
+  </td>
+  	<td   nowrap="nowrap"><img src="../../static/pic/outdoor.gif"/>
+  </td>
+  	<td   nowrap="nowrap"><img src="../../static/pic/art.gif"/>
+  </td>
+  	<td   nowrap="nowrap"><img src="../../static/pic/sports.gif"/>
+  </td>
+  
+  </tr>
+<tr>
+	<td   nowrap="nowrap"><img src="../../static/pic/bookexchange.gif"/>
+  </td>
+  	<td   nowrap="nowrap"><img src="../../static/pic/game.gif"/>
+  </td>
+  	<td   nowrap="nowrap"><img src="../../static/pic/learning.gif"/>
+  </td>
+  	<td   nowrap="nowrap"><img src="../../static/pic/others.gif"/>
+  </td>
+  </tr>
+</table>
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div id="login_register">
+<div  id="loginhead"><p class="loginheadtext">Login/Register</p>
+<img src="../../static/pic/closebutton.png" id="closebutton" />
+</div>
+
+
+<div id="login">
+
+<p class="formhead">登陆</p>
+
+<form action="/login/" id="loginform" method="post">
+
+{%include "login.html"%}
+
+<div class="formdiv"><input type="checkbox" id="rememberme" value="remember" checked />记住我  &nbsp &nbsp 忘记密码？</div>
+
+<div class="formbutton"><input type="submit" value="登录" name="loginsubmit" class="buttonblue" /></div>
+</form>
+
+</div>
+
+
+
+
+<div id="register" >
+
+<p class="formhead">快速注册</p>
+
+
+<form action="/register/" id="registerform" method="post">
+{%include "register.html"%}
+<div class="formdiv"><input type="submit" value="注册" name="registersubmit" class="buttonred"/></div>
+
+</form>
+
+</div>
+
+</div>
+
+
+<div id="mask"></div>
+</body>
+</html>
